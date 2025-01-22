@@ -1,0 +1,61 @@
+.editor-container {
+    position: relative;
+    margin-top: 40px;
+}
+
+.editor-container .ql-toolbar {
+    display: none;
+    position: absolute;
+    top: -40px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.editor-container:hover .ql-toolbar {
+    display: flex;
+}
+
+.ql-container {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.editor-header .ql-editor::before {
+    content: attr(data-placeholder);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    color: #999;
+    pointer-events: none;
+
+}
+
+.ql-editor:not(.ql-blank)::before {
+    display: none;
+}
+
+.ql-editor img {
+    display: inline-block;
+}
+
+.editor-container .ql-editor {
+    width: 100% !important;
+}
+
+.editor-header .ql-editor {
+    text-align: center; /* Force center alignment */
+    width: 100% !important;
+}
+
+.editor-header .ql-toolbar {
+    display: none !important;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}

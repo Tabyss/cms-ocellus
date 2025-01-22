@@ -3,11 +3,8 @@ import Sidebar from './Sidebar'
 import Navbar from './Navbar'
 import { Flex } from '@chakra-ui/react'
 import { Outlet } from 'react-router-dom'
-import useCustomToast from '../hooks/useCustomToast'
 
 const MainLayout: React.FC = () => {
-    const { showToast } = useCustomToast()
-
     return (
         <Flex direction='column'>
             <Navbar />

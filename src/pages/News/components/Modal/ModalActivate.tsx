@@ -18,7 +18,7 @@ interface NewsModalProps {
   isActive: boolean;
 }
 
-const ModalActivate: React.FC<NewsModalProps> = ({ isOpen, onClose, onConfirm, isActive }) => {
+const ModalActivate: React.FC<NewsModalProps> = ({ isOpen, onClose, isActive }) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose} isCentered>
       <ModalOverlay />

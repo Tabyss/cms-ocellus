@@ -6,7 +6,7 @@ import {
     Button,
 } from '@chakra-ui/react';
 import { useDropzone } from 'react-dropzone';
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import useCustomToast from '../../../../hooks/useCustomToast';
 import { MdCloudUpload } from 'react-icons/md';
 
@@ -21,7 +21,6 @@ const ImageInput: React.FC<ImageInputProps> = ({ formData, setFormData }) => {
     const [isHovering, setIsHovering] = useState(false);
     const [imageUpload, setImageUpload] = useState<string | null>(null);
     const { showToast } = useCustomToast();
-    const fileInputRef = useRef<HTMLInputElement | null>(null);
 
     const onDropImage = (acceptedFiles: File[]) => {
         if (acceptedFiles.length > 0) {
@@ -64,13 +63,6 @@ const ImageInput: React.FC<ImageInputProps> = ({ formData, setFormData }) => {
             });
         },
     });
-
-    const openFileInput = (e: React.MouseEvent) => {
-        e.stopPropagation(); // Prevents button click from triggering the parent click
-        if (fileInputRef.current) {
-            fileInputRef.current.click();
-        }
-    };
 
     return (
         <Flex position="relative" overflow="hidden" w="100%" maxH="150px">

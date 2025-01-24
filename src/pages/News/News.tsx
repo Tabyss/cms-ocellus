@@ -31,7 +31,7 @@ const News = () => {
             search: searchQuery,
             order_by: orderBy,
             sort_by: 'created_at',
-        }), { keepPreviousData: true }
+        })
     );
 
     const pageInfo = data ? {
@@ -88,7 +88,7 @@ const News = () => {
                     <Text color="red.500">Error fetching news</Text>
                 </Flex>
             ) : (
-                <TableNews displayNews={data.data || []} orderBy={orderBy} setOrderBy={setOrderBy} refetch={refetch} />
+                <TableNews displayNews={data.data || []} orderBy={orderBy} setOrderBy={setOrderBy} refetch={() => refetch()} />
             )}
 
             <Flex

@@ -20,7 +20,7 @@ function TableNews(props: any) {
 
     const deleteNewsMutation = useMutation(DeleteNews, {
         onSuccess: () => {
-            navigate(ROUTE_NAME.HOME);
+            refetch()
         },
         onError: (error: any) => {
             console.error('Error deleting news:', error.message);
